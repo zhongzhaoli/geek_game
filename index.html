@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="./js/index.js"></script>
+	<style type="text/css">
+		body,html{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.box{
+			width: 1000px;
+			height: 600px; 
+			border: 1px #000 solid;
+			overflow: hidden;
+			position: relative;
+		}
+		.img_div{
+			width: 200%;
+			overflow: hidden;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+		img{
+			width: 50%;
+			float: left;
+			display: block;
+		}
+		.btn{
+			position: relative;
+			z-index: 2;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="img_div" id="img_div">
+			<img src="./image/img/bg.png">
+			<img src="./image/img/bg.png">
+		</div>
+		<button class="btn" id="start_btn" onclick="start_game()">开始游戏</button>
+	</div>
+</body>
+</html>
