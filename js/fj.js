@@ -1,7 +1,12 @@
 //定义变量 上下左右
 var key_left, key_top, key_right, key_down = false;
+//可以发射的状态
+var can_create;
 //键盘按下事件
 window.onkeydown = function(e){
+	if(!game_type){
+		return;
+	}
 	//获取按下的代码数
 	var key = e.keyCode;
 	//左37 上38 右39 下40
@@ -18,9 +23,21 @@ window.onkeydown = function(e){
 	if(key === 40){
 		key_down = true;
 	} 
+	if(key === 32){
+		//如果可以发射
+		if(can_create){
+			//创建子弹
+			create_bullet();
+		}
+		//设置为不可以发射
+		can_create = false;
+	}
 }
 //键盘弹起事件
 window.onkeyup = function(e){
+	if(!game_type){
+		return;
+	}
 	var key = e.keyCode;
 	//如果是左 变量为false;
 	if(key === 37){
@@ -35,6 +52,10 @@ window.onkeyup = function(e){
 	if(key === 40){
 		key_down = false;
 	} 
+	if(key === 32){
+		//设置为可以发射
+		can_create = true;
+	}
 }
 function fj_move(){
 	//飞机速度

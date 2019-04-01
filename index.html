@@ -4,6 +4,7 @@
 	<title></title>
 	<script type="text/javascript" src="./js/index.js"></script>
 	<script type="text/javascript" src="./js/fj.js"></script>
+	<script type="text/javascript" src="./js/bullet.js"></script>
 	<style type="text/css">
 		body,html{
 			width: 100%;
@@ -46,11 +47,17 @@
 			top: calc((100% - 66px) / 2);
 			left: 0;
 			display: none;
+			z-index: 2;
+		}
+		.bullet{
+			height: 33px;
+			position: absolute;
+			z-index: 1;
 		}
 	</style>
 </head>
 <body>
-	<div class="box">
+	<div class="box" id="box">
 		<div class="img_div" id="img_div">
 			<img src="./image/img/bg.png">
 			<img src="./image/img/bg.png">

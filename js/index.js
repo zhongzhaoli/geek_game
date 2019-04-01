@@ -15,6 +15,7 @@ function step(){
 	if(game_type){
 		bg_move();
 		fj_move();
+		bullet_move();
 	}
 
 	//循环调用自己
