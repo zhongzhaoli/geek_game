@@ -6,13 +6,17 @@ function start_game(){
 	game_type = 1;
 	//让按钮隐藏
 	document.getElementById("start_btn").style.display = "none";
+	//让飞机显示
+	document.getElementById("fj").style.display = "block";
 }
 //计时器的回调函数
 function step(){
 	//如果游戏是开始了 那就运行 背景移动函数
 	if(game_type){
 		bg_move();
+		fj_move();
 	}
+
 	//循环调用自己
 	window.requestAnimationFrame(step);
 }
